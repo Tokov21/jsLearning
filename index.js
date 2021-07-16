@@ -1,53 +1,83 @@
-// 1
-function getMaxNum(num1, num2) {
-    if (!isNaN(num1) && !isNaN(num2) && num1 > num2) {
-        return Number(num1);
-    } else {
-        if (num1 === num2) {
-            return "Числа одинаковые!";
-        } else {
-            return Number(num2);
-        }
-    }
-}
+// Functions:
 
-getMaxNum(num1, num2);
+// 1
+function getString(text) {
+    return "Вы ввели " + text;
+}
 
 // 2
-function getMinNum(num1, num2) {
-    if (!isNaN(num1) && !isNaN(num2) && num1 < num2) {
-        return Number(num1);
-    } else {
-        if (num1 === num2) {
-            return "Числа одинаковые!";
-        } else {
-            return Number(num2);
-        }
-    }
+function getSumOfTwo(num) {
+    return Number(num) + 5;
 }
-
-getMinNum(num1, num2);
 
 // 3
-function checkNumIsEven(num1) {
-    if (!isNaN(num1) && num1 % 2 === 0) {
-        return "Число чётное!";
-    } else if (isNaN(num1)) {
-        return "Заданное значение не число!";
-    } else {
-        return "Число нечётное!";
-    }
+function getConcatOfTwo(str1, str2) {
+    return String(str1) + str2;
 }
 
-even(Number(num1));
-
-// 4 b^2 - 4*a*c
-function getDiscriminant(b, a, c) {
-    if (!isNaN(b, a, c)) {
-        return Number(b) ** 2 - 4 * Number(a) * Number(c);
-    } else {
-        return null;
-    }
+// 4
+function getMultiOfTwo(num1, num2) {
+    return Number(num1) * Number(num2);
 }
 
-getDiscriminant(b, a, c);
+// 5
+function isDivisible(num1, num2) {
+    return Number(num1) % Number(num2) === 0 ? true : false;
+}
+
+// 6
+function raiseToThePower(base, exp) {
+    return Number(Math.pow(base, exp));
+}
+
+// 7
+function getArea(figure, a, b, c, p, r, l, h) {
+    let S = 0;
+
+    switch (figure) {
+        case "triangle":
+            S = (1 / 2) * a * h;
+            break;
+        case "cone":
+            S = p * r * (r + l);
+            break;
+        case "trapezoid":
+            S = (1 / 2) * (a + b) * h;
+            break;
+        default:
+            console.log("Выберите: triangle || cone || trapezoid");
+            return null;
+    }
+    return S;
+}
+
+// 8
+function calc(num1, num2, operator) {
+    num1 = Number(num1);
+    num2 = Number(num2);
+    operator = String(operator);
+
+    let answer = 0;
+
+    switch (operator) {
+        case "+":
+            answer = num1 + num2;
+            break;
+        case "-":
+            answer = num1 - num2;
+            break;
+        case "*":
+            answer = num1 * num2;
+            break;
+        case "/":
+            answer = num1 / num2;
+            break;
+        default:
+            console.log('Введите числа и оператор');
+    }
+    return answer;
+}
+
+// Loops:
+
+
