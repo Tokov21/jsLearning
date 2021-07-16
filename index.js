@@ -73,11 +73,61 @@ function calc(num1, num2, operator) {
             answer = num1 / num2;
             break;
         default:
-            console.log('Введите числа и оператор');
+            console.log("Введите числа и оператор");
     }
     return answer;
 }
 
-// Loops:
+// Functions with Loops:
 
+// 1
+function showHelloLoopMessage() {
+    for (let i = 0; i < 5; i++) {
+        console.log("Hello loop");
+    }
+}
 
+// 2
+function showLoopPlusIMessage() {
+    for (let i = 1; i < 6; i++) {
+        console.log("Loop " + i);
+    }
+}
+
+// 3
+function returnNum(num) {
+    for (let i = 0; i < 5; i++) {
+        console.log(Number(num));
+    }
+    return Number(num);
+}
+
+// 4
+function multiplyNums(num1, num2) {
+    let multiplied = 0;
+
+    for (let i = 0; i < 5; i++) {
+        console.log((multiplied += Number(num1) * Number(num2)));
+    }
+    return multiplied;
+}
+
+// 5 + 5*
+function multiplyWhileLessNum(num) {
+    let buffer = 1;
+
+    for (let i = 1; i <= num; i++) {
+        buffer *= i;
+    }
+    return buffer;
+}
+
+// 6*
+function valPower(val, power) {
+    let buffer = 1;
+
+    for (let i = 1; i <= power; i++) {
+        buffer *= val;
+    }
+    return buffer;
+}
