@@ -6,76 +6,83 @@ function getString(text) {
 }
 
 // 2
-function getSumOfTwo(num) {
-    return Number(num) + 5;
+function calcNumPlusFive(num) {
+    return typeof num === "number" ? num + 5 : null;
 }
 
 // 3
 function getConcatOfTwo(str1, str2) {
-    return String(str1) + str2;
+    return typeof (str1 && str2) === "string" ? str1 + str2 : null;
 }
 
 // 4
-function getMultiOfTwo(num1, num2) {
-    return Number(num1) * Number(num2);
+function calcMultiOfTwo(num1, num2) {
+    return typeof (num1 && num2) === "number" ? num1 * num2 : null;
 }
 
 // 5
 function isDivisible(num1, num2) {
-    return Number(num1) % Number(num2) === 0 ? true : false;
+    return typeof (num1 && num2) === "number" ||
+        typeof (num1 && num2) === "string"
+        ? num1 % num2 === 0
+        : false;
 }
 
 // 6
 function raiseToThePower(base, exp) {
-    return Number(Math.pow(base, exp));
+    return typeof (num1 && num2) === "number" ||
+        typeof (num1 && num2) === "string"
+        ? Math.pow(base, exp)
+        : null;
 }
 
 // 7
-function getArea(figure, a, b, c, p, r, l, h) {
+function calcArea(figure) {
     let S = 0;
+    const p = 3.14;
 
     switch (figure) {
         case "triangle":
-            S = (1 / 2) * a * h;
+            S = (1 / 2) * arguments[1] * arguments[2];
             break;
         case "cone":
-            S = p * r * (r + l);
+            S = p * arguments[1] * (arguments[1] + arguments[2]);
             break;
         case "trapezoid":
-            S = (1 / 2) * (a + b) * h;
+            S = (1 / 2) * (arguments[1] + arguments[2]) * arguments[3];
             break;
         default:
-            console.log("Выберите: triangle || cone || trapezoid");
+            console.log(
+                "Выберите: triangle || cone || trapezoid и введите данные для формулы через запятую!"
+            );
             return null;
     }
-    return S;
+
+    return isNaN(S)
+        ? "Введите данные для формулы через запятую, после названия фигуры! "
+        : S;
 }
 
 // 8
-function calc(num1, num2, operator) {
-    num1 = Number(num1);
-    num2 = Number(num2);
-    operator = String(operator);
-
-    let answer = 0;
-
-    switch (operator) {
-        case "+":
-            answer = num1 + num2;
-            break;
-        case "-":
-            answer = num1 - num2;
-            break;
-        case "*":
-            answer = num1 * num2;
-            break;
-        case "/":
-            answer = num1 / num2;
-            break;
-        default:
-            console.log("Введите числа и оператор");
-    }
-    return answer;
+function calcWithOperator(num1, num2, operator) {
+    if (typeof (num1 && num2 === "number") && typeof operator === "string") {
+        switch (operator) {
+            case "+":
+                return num1 + num2;
+                break;
+            case "-":
+                return num1 - num2;
+                break;
+            case "*":
+                return num1 * num2;
+                break;
+            case "/":
+                return num1 / num2;
+                break;
+            default:
+                console.log("Введите два числа, и оператор строкой!");
+        }
+    } else alert("Введите два числа, и оператор строкой!");
 }
 
 // Functions with Loops:
@@ -95,39 +102,50 @@ function showLoopPlusIMessage() {
 }
 
 // 3
-function returnNum(num) {
-    for (let i = 0; i < 5; i++) {
-        console.log(Number(num));
-    }
-    return Number(num);
+function returnNumFiveTimes(num) {
+    if (typeof num === "number") {
+        for (let i = 0; i < 5; i++) {
+            console.log(num);
+        }
+        return num;
+    } else return null;
 }
 
 // 4
-function multiplyNums(num1, num2) {
-    let multiplied = 0;
+function multiplyTwoFiveTimes(num1, num2) {
+    if (typeof (num1 && num2 === "number")) {
+        let multiplied = 0;
 
-    for (let i = 0; i < 5; i++) {
-        console.log((multiplied += Number(num1) * Number(num2)));
-    }
-    return multiplied;
+        for (let i = 0; i < 5; i++) {
+            multiplied += num1 * num2;
+        }
+
+        return multiplied;
+    } else return null;
 }
 
 // 5 + 5*
-function multiplyWhileLessNum(num) {
-    let buffer = 1;
+function calcFactorial(num) {
+    if (typeof num === "number") {
+        let buffer = 1;
 
-    for (let i = 1; i <= num; i++) {
-        buffer *= i;
-    }
-    return buffer;
+        for (let i = 1; i <= num; i++) {
+            buffer *= i;
+        }
+
+        return buffer;
+    } else return null;
 }
 
 // 6*
-function valPower(val, power) {
-    let buffer = 1;
+function calcPow(val, power) {
+    if (typeof (val && power) === "number") {
+        let buffer = 1;
 
-    for (let i = 1; i <= power; i++) {
-        buffer *= val;
-    }
-    return buffer;
+        for (let i = 1; i <= power; i++) {
+            buffer *= val;
+        }
+
+        return buffer;
+    } else return null;
 }
