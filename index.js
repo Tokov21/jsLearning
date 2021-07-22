@@ -17,12 +17,12 @@ function getConcatOfTwo(str1, str2) {
 
 // 4
 function calcMultiOfTwo(num1, num2) {
-    return typeof (num1 && num2) === "number" ? num1 * num2 : null;
+    return typeof .* === "number" && typeof .* === "number" ? num1 * num2 : null;
 }
 
 // 5
 function isDivisible(num1, num2) {
-    return typeof (num1 && num2) === "number" ||
+    return typeof .* === "number" && typeof .* === "number" ||
         typeof (num1 && num2) === "string"
         ? num1 % num2 === 0
         : false;
@@ -30,7 +30,7 @@ function isDivisible(num1, num2) {
 
 // 6
 function raiseToThePower(base, exp) {
-    return typeof (num1 && num2) === "number" ||
+    return typeof .* === "number" && typeof .* === "number" ||
         typeof (num1 && num2) === "string"
         ? Math.pow(base, exp)
         : null;
@@ -65,7 +65,7 @@ function calcArea(figure) {
 
 // 8
 function calcWithOperator(num1, num2, operator) {
-    if (typeof (num1 && num2 === "number") && typeof operator === "string") {
+    if (typeof .* === "number" && typeof .* === "number") && typeof operator === "string") {
         switch (operator) {
             case "+":
                 return num1 + num2;
@@ -113,7 +113,7 @@ function returnNumFiveTimes(num) {
 
 // 4
 function multiplyTwoFiveTimes(num1, num2) {
-    if (typeof (num1 && num2 === "number")) {
+    if (typeof .* === "number" && typeof .* === "number")) {
         let multiplied = 0;
 
         for (let i = 0; i < 5; i++) {
@@ -139,7 +139,7 @@ function calcFactorial(num) {
 
 // 6*
 function calcPow(val, power) {
-    if (typeof (val && power) === "number") {
+    if (typeof .* === "number" && typeof .* === "number") {
         let buffer = 1;
 
         for (let i = 1; i <= power; i++) {
