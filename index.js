@@ -1,72 +1,107 @@
-// Objects
+/*
+ * Arrays
+ */
 
-// 1. Создать обьект "пользователь" - { }
-// Содержит:
-// свойство firstname = Vasya
-// свойство age = 32
-const user = {
-    firstname: "Vasya",
-    age: 32,
-};
+/* 
+? 1. Создать пустой массив, ноль ячеек, добавить в него цифры от 1 до 10 (push)
+*/
+const arr = [];
+for (let i = 1; i <= 10; i++) {
+    arr.push(i);
+}
 
-// 2. Создать объект "кот" - { }
-// свойство длина хвоста
-// метод возвращающий текст "Meow"
-const cat = {
-    tailLength: 10,
-    sayMeow: function () {
-        return "Meow";
-    },
-};
+/* 
+? 2. Добавить в начало массива 0
+*/
+arr.unshift(0);
 
-// 3. Создать объект "жираф" - { }
-// Содержит:
-// Возраст, вес, спит ли жираф, высота туловища, длина шеи,
-// метод рост (возвращает сумму свойств высоты туловища и длины шеи),
-// метод который разбудит или усыпит жирафа.
-const giraffe = {
-    age: 7,
-    weight: 80,
-    isSleeping: false,
-    torsoHeight: 150,
-    neckLength: 50,
-    height: function () {
-        return this.torsoHeight + this.neckLength;
-    },
-    sleep: function () {
-        return this.isSleeping
-            ? (this.isSleeping = false)
-            : (this.isSleeping = true);
-    },
-};
+/* 
+? 3. Удалить 1 элемент с конца массива, и 1 элемент с начала
+*/
+arr.pop();
+arr.shift();
 
-// 4. Создать шаблон объекта "мотоцикл" - new Constructor()
-// Содержит:
-// Название модели, объем бака в литрах, модель двигателя, количество мест,
-// текущая скорость, метод для увеличения скорости,
-// метод для замедления скорости, метод полной остановки.
-const Motorcycle = function (
-    model = "",
-    volOfTank = null,
-    engineModel = "",
-    seats = null,
-    speed = null
-) {
-    this.model = model;
-    this.volOfTank = volOfTank;
-    this.engineModel = engineModel;
-    this.seats = seats;
-    this.speed = speed;
-    this.increaseSpeed = function () {
-        return (this.speed += 1);
-    };
-    this.decreaseSpeed = function () {
-        return (this.speed -= 1);
-    };
-    this.engineStop = function () {
-        this.speed = 0;
-        return true;
-    };
-};
+/* 
+? 4. Удалить 1 элемент где нибудь в середине (splice)
+*/
+arr.splice(4, 1);
 
-const jawa = new Motorcycle('JAWA', 5, 'JS-359', 2, 150);
+/* 
+? 5. Добавить на его место в середине цифру 5 (splice)
+*/
+arr.splice(4, 0, 5);
+
+/* 
+? 6. Копировать или клонировать весь массив (slice или Object.assign)
+*/
+// const arrCopy = arr.slice(0);
+
+// const arrCopy = [];
+// Object.assign(arrCopy, arr);
+
+const arrCopy = Object.assign(arr);
+
+/* 
+? 7. У новой копии массива удалить половину элементов (array.length/2 - 1)
+*/
+function deleteArrayPart() {
+    let arrayPart = prompt("Какую часть массива удалить, 1 или 2?");
+
+    if (arrayPart === "number" && !isNaN(arrayPart)) {
+        check1or2(arrayPart);
+    }
+    alert("Вы ввели не число!");
+
+    function check1or2(arrayPart) {
+        while (arrayPart < 1 && arrayPart > 2) {
+            alert("Введите число 1 или 2");
+            arrayPart = prompt("Какую часть массива удалить, 1 или 2?");
+
+            return arrayPart;
+        }
+    }
+}
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
+
+/* 
+? 
+*/
