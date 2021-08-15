@@ -179,4 +179,6 @@ const User = function (
 ? Имена, возрасты, пол, и пароль пусть зависят от индекса ("username1", "username2" ...).
 */
 
-const users = Array(5).fill([Array(5)].map((value, index) => (value[index] = new User())));
+// In progress..
+
+// const users = Array(5).fill([Array(5)].map((value, index) => (value[index] = new User())));
