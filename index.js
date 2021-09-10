@@ -1,74 +1,65 @@
-/*
-! spread
-*/
-function arrayCopy(array) {
-    const newArr = [...array];
+let counter = 0;
 
-    return newArr;
-}
+const counterDiv = document.querySelector("#counter");
 
-console.log(arrayCopy([1, 2, 3, 4, 5]));
+displayCounter();
 
-function concatTwoArrays(arr1, arr2) {
-    return [...arr1, ...arr2];
-}
+function displayCounter() {
+    let { style, classList } = counterDiv;
 
-console.log(concatTwoArrays([1, "sas", 3], [1, 2, 3]));
+    counterDiv.textContent = counter;
+    style.padding = "0 10px";
+    style.border = "1px solid black";
 
-function concatTwoObjects(obj1, obj2) {
-    return { ...obj1, ...obj2 };
-}
-
-console.log(
-    concatTwoObjects(
-        { test: 123, sas: "less", 7: 231 },
-        { 1: 123, 2: "sas", 3: "sas" }
-    )
-);
-
-function arrayPlusArrays(array, ...arrays) {
-    const arr = [];
-
-    for (let i = 0; i < arrays.length; i++) {
-        arr.push(...arrays[i]);
+    if (counter === 0) {
+        classList.add("displayWhite");
     }
 
-    arr.forEach((v, index) => {
-        if (typeof v === "object") {
-            const v1 = { ...v };
-            arr.push(v1);
-            // arr.splice(index, 1, console.log(v1));
-        }
-    });
+    if (counter >= 1) {
+        classList.replace(classList[0], "displayCounterRed");
+    }
 
-    return [...array, ...arr];
+    if (counter < 0) {
+        classList.add(classList[0], "displayCounterRed");
+    }
 }
 
-console.log(
-    arrayPlusArrays(
-        [1, 2, 3],
-        ["obj", 2],
-        [4, { 12: "test" }, 6],
-        ["typo", "test"]
-    )
-);
+function increase() {
+    counter++;
 
-/*
-! rest
-*/
-function arrFromArgs(...array) {
-    const newArr = [...array];
-
-    return newArr;
+    displayCounter();
 }
 
-console.log(arrFromArgs(1, 2, 3, 4, 5));
-
-function deleteOnIndex(deleteIndex, array, ...cells) {
-    const value = array.splice(deleteIndex, 1, ...cells);
-    
-
-    return value;
+function decrease() {
+    counter--;
+    displayCounter();
 }
 
-console.log(deleteOnIndex(3, [1, 2, 3, 4, 5], 1, "sas", 656, 53));
+function addNumber(num) {
+    num = Number(prompt("На сколько увеличить?"));
+
+    while (isNaN(num)) {
+        num = Number(prompt("На сколько увеличить?"));
+    }
+
+    counter += num;
+
+    displayCounter();
+}
+
+function substractNumber(num) {
+    num = Number(prompt("На сколько уменьшить?"));
+
+    while (isNaN(num)) {
+        num = Number(prompt("На сколько уменьшить?"));
+    }
+
+    counter -= num;
+
+    displayCounter();
+}
+
+function reset() {
+    counter = 0;
+    displayCounter();
+}
