@@ -1,65 +1,37 @@
-let counter = 0;
+const button1 = document.querySelector("#button1");
 
-const counterDiv = document.querySelector("#counter");
+button1.innerHTML = `Ky
+<div>Privet</div>
+<p>Vot eto prkiol</p>`;
 
-displayCounter();
+button1.style.backgroundColor = "aqua";
+button1.style.border = "2px solid blue";
 
-function displayCounter() {
-    let { style, classList } = counterDiv;
+const body = document.querySelector("body");
+body.innerHTML = `<div id="newDiv">
+<ul>
+    <li>
+        <li>test 1</li>
+    </li>
+    <li>
+        <li>test 2</li>
+    </li>
+    <li>
+        <li>test 3</li>
+    </li>
+</ul>
+</div>`;
 
-    counterDiv.textContent = counter;
-    style.padding = "0 10px";
-    style.border = "1px solid black";
+const lis = document.getElementsByTagName("li");
+const lis1 = document.querySelectorAll("li");
 
-    if (counter === 0) {
-        classList.add("displayWhite");
-    }
-
-    if (counter >= 1) {
-        classList.replace(classList[0], "displayCounterRed");
-    }
-
-    if (counter < 0) {
-        classList.add(classList[0], "displayCounterRed");
-    }
+for (let i = 0; i < lis.length; i++) {
+    lis[i].classList.add("italic");
 }
 
-function increase() {
-    counter++;
-
-    displayCounter();
+for (let i = 0; i < lis1.length; i++) {
+    lis1[i].style.color = "red";
 }
 
-function decrease() {
-    counter--;
-    displayCounter();
-}
-
-function addNumber(num) {
-    num = Number(prompt("На сколько увеличить?"));
-
-    while (isNaN(num)) {
-        num = Number(prompt("На сколько увеличить?"));
-    }
-
-    counter += num;
-
-    displayCounter();
-}
-
-function substractNumber(num) {
-    num = Number(prompt("На сколько уменьшить?"));
-
-    while (isNaN(num)) {
-        num = Number(prompt("На сколько уменьшить?"));
-    }
-
-    counter -= num;
-
-    displayCounter();
-}
-
-function reset() {
-    counter = 0;
-    displayCounter();
-}
+console.log(lis);
+console.log(lis1);
