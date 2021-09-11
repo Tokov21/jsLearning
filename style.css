@@ -1,3 +1,9 @@
 .italic {
     font-style: italic;
 }
+
+.span {
+    color: blue;
+    font-size: 2rem;
+    font-weight: bold;
+}

@@ -35,3 +35,17 @@ for (let i = 0; i < lis1.length; i++) {
 
 console.log(lis);
 console.log(lis1);
+
+const span = document.createElement("span");
+
+span.textContent = "I am new span";
+span.classList.add("span");
+
+body.appendChild(span);
+
+for (let i = 0; i < 3; i++) {
+    const div = document.createElement("div");
+    div.textContent = `divElem${i}`;
+    div.id = `divElem${i}`;
+    body.appendChild(div);
+}
